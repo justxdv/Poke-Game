@@ -58,3 +58,80 @@ body {
 .card.flip {
     transform: rotateY(180deg);
 }
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .message {
+    background-color: #fac5c5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+  }
+  
+  .restart-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 1px;
+    margin-left: 5px;
+  }
+  
+  .restart-button:hover {
+    cursor: pointer;
+    background-color: #301860;
+  }
+
+  .cursor {
+    z-index: 999;
+    position: fixed;
+    background: #2696E8;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #2696E8,
+                0 0 10px #2696E8,
+                0 0 20px #2696E8;
+    animation: colors 5s infinite;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes colors {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+  }
+
+  .cursor::before {
+    content: '';
+    position: absolute;
+    background: #2696E8;
+    width: 35px;
+    height: 35px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
+  }

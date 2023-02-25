@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poke Game</title>
+    <link rel="icon" type="image/x-icon" href="./assets/ball.png">
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+    <canvas id="confetti"></canvas>
+    <div class="cursor"></div>
     <div class="game">
         <div class="card" data-image="./assets/pokemon1.png">
             <div class="front"></div>
@@ -81,8 +85,29 @@
             <div class="back"></div>
         </div>
     </div>
+    <!-- <canvas id="my-canvas"></canvas> -->
+    <div id="overlay" class="overlay">
+      </div>
+  
 
+    <script type="text/javascript">
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
 
+            cursor.style.top = y + 'px';
+            cursor.style.left = x + 'px';
+            cursor.style.display = 'block';
+        });
+
+        // cursor effects on mouse out
+        document.addEventListener('mouseout', () => {
+            cursor.style.display = 'none';
+        })
+    </script>
+    
+    <script src="js-confetti.browser.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
